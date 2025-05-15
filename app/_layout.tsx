@@ -29,6 +29,22 @@ export default function Layout(){
           ({color, size}) => <Ionicons name='settings-outline' size={size} color={color}/>
         }}
       />
+      <Tabs.Screen
+        name='notifications'
+        options={{
+          title: 'Notificações',
+          tabBarIcon:
+          ({color, size}) => <Ionicons name='notifications-outline' size={size} color={color}/>
+        }}
+      />
+      <Tabs.Screen
+        name='options'
+        options={{
+          title: 'Opções',
+          tabBarIcon:
+          ({color, size}) => <Ionicons name='options-outline' size={size} color={color}/>
+        }}
+      />
         
     </Tabs>
   );
