@@ -2,15 +2,15 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Button, Text, View } from "react-native";
 
-export default function OptionsScreen(){
+export default function List(){
     const router = useRouter();
-    return(
-        
+
+    return (
         <View>
-            <Text>Estou na página Options</Text>
+            <Text>Página de lista</Text>
             <Button 
-                title="Ir para detalhes" 
-                onPress={() => router.push("/navigation/stack/details")}
+                title="1 - detalhe" 
+                onPress={() => router.push(`/personagens/${1}`)}
             />
         </View>
     );

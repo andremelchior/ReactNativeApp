@@ -6,17 +6,9 @@ export default function HomeScreen(){
     const router = useRouter();
     return(
         <View>
-            <Button
-                title="Tabs"
-                onPress={() => router.push("/navigation/tabs")}
-            />
-            <Button
-                title="Drawer"
-                onPress={() => router.push("/navigation/drawer")}
-            />
-            <Button
-                title="Stack"
-                onPress={() => router.push("/navigation/stack")}
+            <Button 
+                title="Personagens" 
+                onPress={() => router.push(`/personagens/`)}
             />
         </View>
     );
