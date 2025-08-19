@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import { View, Text, Touchable, TouchableOpacity } from "react-native";
 import socket from "@/socket/socket"
+import { TextInput } from "react-native-gesture-handler";
+import { styles } from "@/styles/index";
 
 export default function Socket(){
     const roomPrefix = "chat";
@@ -45,7 +47,48 @@ export default function Socket(){
     };
 
     return (
-        <View>
+        <View style={styles.container}>
+            {/*form 1*/}
+            <View>
+                <Text style={styles.title}>Canal: Chat1</Text>
+                <TextInput 
+                    placeholder="Digite sua mensagem"
+                    value={message}
+                    onChangeText={setMessage}
+                    style={styles.input}
+                />
+
+                <TouchableOpacity 
+                    onPress={() => sendMessage('1')}
+                    style={styles.button}
+                >
+                    <Text style={styles.buttonText}>Enviar mensagem</Text>
+                </TouchableOpacity>
+
+            </View>
+
+            <View></View>
+
+            {/*form 2*/}
+            <View>
+                <Text style={styles.title}>Canal: Chat2</Text>
+                <TextInput 
+                    placeholder="Digite sua mensagem"
+                    value={message2}
+                    onChangeText={setMessage2}
+                    style={styles.input}
+                />
+
+                <TouchableOpacity 
+                    onPress={() => sendMessage('2')}
+                    style={styles.button}
+                >
+                    <Text style={styles.buttonText}>Enviar mensagem</Text>
+                </TouchableOpacity>
+
+                <Text>Mensagem recebida:</Text>
+                <Text>{receivedMessage || 'nenhuma mensagem recebida'}</Text>
+            </View>
 
         </View>
     );
